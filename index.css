@@ -1,0 +1,135 @@
+/* Blueish Stopwatch Theme */
+:root {
+  --primary-bg: #e6f0fa;
+  --card-bg: #f7fbff;
+  --primary-blue: #3498db;
+  --deep-blue: #217dbb;
+  --accent-blue: #5dade2;
+  --text-dark: #11334f;
+  --btn-bg: #d6eafd;
+  --btn-hover: #c2def7;
+  --btn-active: #aed6f1;
+  --lap-bg: #eaf6ff;
+}
+
+body {
+  background: var(--primary-bg);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--text-dark);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.stopwatch-container {
+  background: var(--card-bg);
+  box-shadow: 0 4px 24px rgba(52, 152, 219, 0.10);
+  border-radius: 18px;
+  margin: 2rem 0;
+  padding: 2.5rem 2rem 2rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  min-width: 280px;
+  text-align: center;
+}
+
+.title {
+  color: var(--deep-blue);
+  margin-bottom: 1.8rem;
+  letter-spacing: 2px;
+  font-size: 2rem;
+}
+
+.timer {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: var(--primary-blue);
+  letter-spacing: 2px;
+  margin-bottom: 1.3rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.controls button {
+  background: var(--btn-bg);
+  border: none;
+  color: var(--primary-blue);
+  padding: 0.7rem 1.35rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 7px;
+  transition: background 0.16s, color 0.16s;
+  cursor: pointer;
+  outline: none;
+}
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.controls button:not(:disabled):hover {
+  background: var(--btn-hover);
+}
+.controls button:not(:disabled):active {
+  background: var(--btn-active);
+}
+
+.laps-section {
+  margin-top: 1.5rem;
+  background: var(--lap-bg);
+  border-radius: 8px;
+  padding: 1rem 1rem 0.5rem 1rem;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.10);
+}
+.laps-title {
+  text-align: left;
+  color: var(--deep-blue);
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+#lapsList {
+  list-style: decimal leading-zero inside;
+  margin: 0;
+  padding: 0 0 0 2px;
+  text-align: left;
+  max-height: 180px;
+  overflow-y: auto;
+}
+#lapsList li {
+  padding: 0.55em 0.7em;
+  margin-bottom: 0.32em;
+  border-radius: 6px;
+  background: #f8fbfd;
+  color: var(--text-dark);
+  box-shadow: 0 2px 6px rgba(52, 152, 219, 0.06);
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  .stopwatch-container {
+    padding: 1.2rem 0.5rem 1rem 0.5rem;
+    max-width: 98vw;
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 1.25rem;
+  }
+  .timer {
+    font-size: 2.1rem;
+  }
+  .laps-section {
+    padding: 0.6rem 0.45rem 0.4rem 0.45rem;
+  }
+  #lapsList li {
+    font-size: 0.93rem;
+  }
+}

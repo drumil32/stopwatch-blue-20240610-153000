@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Stopwatch</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <main class="stopwatch-container">
+    <h1 class="title">Stopwatch</h1>
+    <div class="timer" aria-live="polite">
+      <span id="minutes" aria-label="minutes">00</span>:<span id="seconds" aria-label="seconds">00</span>
+    </div>
+    <div class="controls">
+      <button id="startBtn" aria-label="Start timer">Start</button>
+      <button id="pauseBtn" aria-label="Pause timer" disabled>Pause</button>
+      <button id="resetBtn" aria-label="Reset timer" disabled>Reset</button>
+      <button id="lapBtn" aria-label="Lap time" disabled>Lap</button>
+    </div>
+    <section class="laps-section">
+      <h2 class="laps-title" id="lapsTitle">Laps</h2>
+      <ol id="lapsList" aria-labelledby="lapsTitle">
+        <!-- Lap items will appear here -->
+      </ol>
+    </section>
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>
